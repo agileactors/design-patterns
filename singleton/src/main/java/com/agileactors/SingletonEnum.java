@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Enum types are considered as the best practice for Singletons
+ * Enum types are considered as the best practice for Singletons.
  */
 public enum SingletonEnum {
 
