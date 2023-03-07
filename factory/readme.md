@@ -22,3 +22,16 @@
 - getInstance() method of java.util.Calendar, NumberFormat, and ResourceBundle uses factory method design pattern.
 - All the wrapper classes like Integer, Boolean etc, in Java uses this pattern to evaluate the values using valueOf()
   method
+
+### Explaining the app
+
+- The current app is a Spring Boot application that exposes a REST API for a company that transports different kind of
+  cargos from a place to another. In the first version, things are simple: we only transport via truck so the
+  Transportation
+  service instantiates a Truck object to do some actions on the cargo and transport it. In the second version, things
+  are
+  more complicated as company has expanded, and it uses a Geography service that decides how to transport the cargo.
+  Based
+  on the response it instantiates different object and then perform the same actions. This second version depicts
+  exactly the
+  problem that Factory tries to solve. The final third version applies the Factory pattern in the previous messy code.
