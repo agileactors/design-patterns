@@ -1,5 +1,6 @@
 package com.agileactors.factory.v2.meansoftransportation;
 
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,11 +19,11 @@ public class Truck {
     log.info("Checking what is needed to load cargo of type {}", cargo);
   }
 
-  public void loadCargo(Double quantity) {
+  public void loadCargo(Double quantity, BigDecimal price) {
     if (quantity.compareTo(MAX_CARGO_LOAD) > 0) {
-      log.info("Loaded cargo with quantity {} into several trucks.", quantity);
+      log.info("Loaded cargo with quantity {} and price {} into several trucks.", quantity, price);
     } else {
-      log.info("Loaded cargo with quantity {} into one truck.", quantity);
+      log.info("Loaded cargo with quantity {} ad price {} into one truck.", quantity, price);
     }
   }
 

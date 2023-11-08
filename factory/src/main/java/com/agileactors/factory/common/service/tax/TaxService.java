@@ -4,5 +4,5 @@ import java.math.BigDecimal;
 
 public interface TaxService {
 
-  public BigDecimal applyTaxesOnCargo(String cargo, BigDecimal net);
+  BigDecimal applyTaxesOnCargo(String cargo, BigDecimal net);
 }
