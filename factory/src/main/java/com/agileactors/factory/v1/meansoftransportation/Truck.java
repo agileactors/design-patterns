@@ -21,9 +21,11 @@ public class Truck {
 
   public void loadCargo(Double quantity, BigDecimal priceAfterTaxes) {
     if (quantity.compareTo(MAX_CARGO_LOAD) > 0) {
-      log.info("Loaded cargo with quantity {} and price {} into several trucks.", quantity, priceAfterTaxes);
+      log.info("Loaded cargo with quantity {} and price {} into several trucks.",
+          quantity, priceAfterTaxes);
     } else {
-      log.info("Loaded cargo with quantity {} and price {} into one truck.", quantity, priceAfterTaxes);
+      log.info("Loaded cargo with quantity {} and price {} into one truck.", quantity,
+          priceAfterTaxes);
     }
   }
 

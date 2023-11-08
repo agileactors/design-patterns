@@ -21,7 +21,8 @@ public class Ship {
 
   public void loadCargo(Double quantity, BigDecimal price) {
     if (quantity.compareTo(MAX_CARGO_LOAD) > 0) {
-      log.info("Loaded cargo with quantity {} and price {} into several ships to be transported.", quantity, price);
+      log.info("Loaded cargo with quantity {} and price {} into several ships to be transported.",
+          quantity, price);
     } else {
       log.info("Loaded cargo with quantity {} and price {} into one ship.", quantity, price);
     }

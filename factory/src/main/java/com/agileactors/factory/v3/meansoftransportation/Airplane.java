@@ -21,7 +21,8 @@ public class Airplane implements MeansOfTransport {
 
   public void loadCargo(Double quantity, BigDecimal price) {
     if (quantity.compareTo(MAX_CARGO_LOAD) > 0) {
-      log.info("Loaded cargo with quantity {} and price {} into several flights to be transported.", quantity, price);
+      log.info("Loaded cargo with quantity {} and price {} into several flights to be transported.",
+          quantity, price);
     } else {
       log.info("Loaded cargo with quantity {} and price {} into one flight.", quantity, price);
     }
