@@ -10,7 +10,7 @@ public class GeographyServiceImpl implements GeographyService {
   public MeansOfTransportationEnum getMeansOfTransportation(String pointOfDeparture,
                                                             String destination) {
     if (pointOfDeparture.compareTo(destination) > 0) {
-      return MeansOfTransportationEnum.BOAT;
+      return MeansOfTransportationEnum.SHIP;
     } else if (pointOfDeparture.length() > 10) {
       return MeansOfTransportationEnum.AIRPLANE;
     } else {

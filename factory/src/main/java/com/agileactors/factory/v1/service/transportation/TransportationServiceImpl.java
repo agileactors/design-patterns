@@ -24,11 +24,11 @@ public class TransportationServiceImpl implements TransportationService {
 
     truck.checkCargo(transportationDto.cargo());
 
-    BigDecimal finalPrice =
+    BigDecimal priceAfterTaxes =
         taxService.applyTaxesOnCargo(transportationDto.cargo(), transportationDto.cost());
-    log.info("Final price after taxing is {} ", finalPrice);
+    log.info("Final price after taxing is {} ", priceAfterTaxes);
 
-    truck.loadCargo(transportationDto.quantity());
+    truck.loadCargo(transportationDto.quantity(), priceAfterTaxes);
 
     truck.sendToDestination(transportationDto.destination());
 

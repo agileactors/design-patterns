@@ -1,10 +1,12 @@
 package com.agileactors.factory.v3.meansoftransportation;
 
+import java.math.BigDecimal;
+
 public interface MeansOfTransport {
 
-  public void checkCargo(String cargo);
+  void checkCargo(String cargo);
 
-  public void loadCargo(Double quantity);
+  void loadCargo(Double quantity, BigDecimal price);
 
-  public void sendToDestination(String destination);
+  void sendToDestination(String destination);
 }

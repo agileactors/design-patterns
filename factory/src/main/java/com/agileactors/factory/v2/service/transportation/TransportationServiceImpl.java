@@ -5,7 +5,7 @@ import com.agileactors.factory.common.enums.MeansOfTransportationEnum;
 import com.agileactors.factory.common.service.geography.GeographyService;
 import com.agileactors.factory.common.service.tax.TaxService;
 import com.agileactors.factory.v2.meansoftransportation.Airplane;
-import com.agileactors.factory.v2.meansoftransportation.Boat;
+import com.agileactors.factory.v2.meansoftransportation.Ship;
 import com.agileactors.factory.v2.meansoftransportation.Truck;
 import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
@@ -31,29 +31,29 @@ public class TransportationServiceImpl implements TransportationService {
         meansOfTransportationEnum);
 
     Airplane airplane = new Airplane();
-    Boat boat = new Boat();
+    Ship ship = new Ship();
     Truck truck = new Truck();
 
     if (MeansOfTransportationEnum.AIRPLANE.equals(meansOfTransportationEnum)) {
       airplane.checkCargo(transportationDto.cargo());
-    } else if (MeansOfTransportationEnum.BOAT.equals(meansOfTransportationEnum)) {
-      boat.checkCargo(transportationDto.cargo());
+    } else if (MeansOfTransportationEnum.SHIP.equals(meansOfTransportationEnum)) {
+      ship.checkCargo(transportationDto.cargo());
     } else {
       truck.checkCargo(transportationDto.cargo());
     }
 
-    BigDecimal finalPrice =
+    BigDecimal priceAfterTaxes =
         taxService.applyTaxesOnCargo(transportationDto.cargo(), transportationDto.cost());
-    log.info("Final price after taxing is {} ", finalPrice);
+    log.info("Final price after taxing is {} ", priceAfterTaxes);
 
     if (MeansOfTransportationEnum.AIRPLANE.equals(meansOfTransportationEnum)) {
-      airplane.loadCargo(transportationDto.quantity());
+      airplane.loadCargo(transportationDto.quantity(), priceAfterTaxes);
       airplane.sendToDestination(transportationDto.destination());
-    } else if (MeansOfTransportationEnum.BOAT.equals(meansOfTransportationEnum)) {
-      boat.loadCargo(transportationDto.quantity());
-      boat.sendToDestination(transportationDto.destination());
+    } else if (MeansOfTransportationEnum.SHIP.equals(meansOfTransportationEnum)) {
+      ship.loadCargo(transportationDto.quantity(), priceAfterTaxes);
+      ship.sendToDestination(transportationDto.destination());
     } else {
-      truck.loadCargo(transportationDto.quantity());
+      truck.loadCargo(transportationDto.quantity(), priceAfterTaxes);
       truck.sendToDestination(transportationDto.destination());
     }
 

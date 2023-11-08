@@ -5,7 +5,6 @@ import com.agileactors.factory.common.dto.TransportationInput;
 import com.agileactors.factory.common.mapper.TransportationMapper;
 import com.agileactors.factory.v1.service.transportation.TransportationService;
 import lombok.RequiredArgsConstructor;
-import org.mapstruct.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

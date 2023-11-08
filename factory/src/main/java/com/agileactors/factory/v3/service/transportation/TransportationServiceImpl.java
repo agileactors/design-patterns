@@ -39,7 +39,7 @@ public class TransportationServiceImpl implements TransportationService {
         taxService.applyTaxesOnCargo(transportationDto.cargo(), transportationDto.cost());
     log.info("Final price after taxing is {} ", finalPrice);
 
-    meansOfTransport.loadCargo(transportationDto.quantity());
+    meansOfTransport.loadCargo(transportationDto.quantity(), );
     meansOfTransport.sendToDestination(transportationDto.destination());
 
     return "Cargo was transported successfully via " + meansOfTransportEnum;
