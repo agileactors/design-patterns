@@ -71,6 +71,8 @@ public class User {
       reset(builder);
       builder.id = UUID.randomUUID();
       builder.permissions = List.of(Permission.PERMISSION1);
+
+      // dummy change
     }
 
     public void makeIntermediateUser(Builder builder) {
