@@ -73,6 +73,7 @@ public class User {
       builder.permissions = List.of(Permission.PERMISSION1);
 
       // dummy change
+      // dummy change 2
     }
 
     public void makeIntermediateUser(Builder builder) {
